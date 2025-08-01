@@ -1,0 +1,39 @@
+<!-- pages/userCenter/userCenter.wxml -->
+<view class="container">
+  <!-- 用户信息区域 -->
+  <view class="user-info-container">
+    <view class="user-avatar" bindtap="navigateToProfileEdit">
+      <image src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"></image>
+    </view>
+    <view class="user-basic-info">
+      <view class="user-name">{{userInfo.nickName || '未设置昵称'}}</view>
+      <view class="user-status">
+        <text>{{userInfo.memberLevel || '普通会员'}}</text>
+        <text class="status-badge" wx:if="{{userInfo.isVerified}}">已认证</text>
+      </view>
+    </view>
+    <view class="edit-profile-btn" bindtap="navigateToProfileEdit">
+      <text>编辑资料</text>
+      <image src="/images/arrow-right.png"></image>
+                                                                                                                                                                                                                                                                                                                                                                                                                                              </view>
+  </view>
+
+  <!-- 订单管理区域 -->
+  <view class="order-management-container">
+    <view class="section-header">
+      <text>我的订单</text>
+      <text class="view-all" bindtap="navigateToAllOrders">查看全部</text>
+    </view>
+    
+    <!-- 订单状态导航 -->
+    <view class="order-status-tabs">
+      <view class="status-tab {{currentTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">
+        <image src="/images/order-status/all.png"></image>
+        <text>全部</text>
+      </view>
+      <view class="status-tab {{currentTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">
+        <image src="/images/order-status/pending.png"></image>
+        <text>待支付</text>
+      </view>
+      <view class="status-tab {{currentTab === 2 ? 'active' : ''}}" bindtap="switchTab" data-index="2">
+        
