@@ -1,0 +1,86 @@
+.container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding-bottom: 20rpx;
+}
+
+/* 用户信息区域 */
+/* 父容器：头像 + 文字 横向排版 */
+.user-info-container {
+  display: flex;        /* 横向布局 */
+  align-items: center;  /* 垂直居中 */
+  padding: 90rpx 34rpx; 
+  background-color: rgb(231, 231, 231);
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 头像样式（保持原有） */
+.user-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 24rpx; /* 与文字保持间距 */
+}
+.avatar image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 文字内容容器：让内部内容也横向排版 */
+.user-text-wrap {
+  display: flex;
+  flex-direction: column; /* 先纵向，方便 nickname + 编辑按钮 再横向 */
+  flex: 1; /* 占满剩余空间 */
+}
+
+/* 昵称 + 编辑按钮 这一行：横向排版 */
+.name-row {
+  display: flex;
+  align-items: center;  /* 垂直居中 */
+  justify-content: space-between; /* 昵称靠左，编辑按钮靠右 */
+  margin-bottom: 10rpx;  /* 与会员状态保持间距 */
+}
+
+/* 昵称样式（保持原有） */
+.user-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+  left: -15rpx;
+}
+
+/* 编辑资料按钮：横向排版（文字 + 箭头） */
+.edit-profile-btn {
+  display: flex;
+  align-items: center; 
+  color: rgb(131, 109, 109);
+  font-size: 28rpx;
+}
+.edit-button{
+  border-radius: 20rpx;
+}
+.edit-profile-btn image {
+  width: 24rpx;
+  height: 40rpx;
+  margin-left: 8rpx; /* 与文字保持间距 */
+}
+
+
+/* 会员状态样式（保持原有，可微调） */
+.user-status {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666;
+}
+.status-badge {
+  margin-left: 12rpx;
+  padding: 2rpx 16rpx;
+  background-color: #4cd964;
+  color: #fff;
+  border-radius: 20rpx;
+  font-size: 20rpx;
+}

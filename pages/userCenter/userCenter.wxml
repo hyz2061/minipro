@@ -3,7 +3,7 @@
   <!-- 用户信息区域 -->
   <view class="user-info-container">
     <view class="user-avatar" bindtap="navigateToProfileEdit">
-      <image src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"></image>
+      <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
     </view>
     <view class="user-basic-info">
       <view class="user-name">{{userInfo.nickName || '未设置昵称'}}</view>
@@ -13,7 +13,7 @@
       </view>
     </view>
     <view class="edit-profile-btn" bindtap="navigateToProfileEdit">
-      <text>编辑资料</text>
+      <button class="edit-button">编辑资料</button>
       <image src="/images/arrow-right.png"></image>
     </view>
   </view>

@@ -12,13 +12,21 @@ Page({
    * 页面的初始数据
    */
   data:{
+    userInfo: {},
     currentTab: 0
+  },
+  navigateToProfileEdit: function() {
+    // 跳转到编辑页面，路径根据你的实际情况修改
+    wx.navigateTo({
+      url: '/pages/profileEdit/profileEdit'
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.loadUserInfo();
 
   },
 
@@ -69,5 +77,10 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  loadUserInfo: function() {
+    // 实际项目中可能是从本地缓存或网络请求获取
+    const userInfo = wx.getStorageSync('userInfo') || {};
+    this.setData({ userInfo });
   }
 })
