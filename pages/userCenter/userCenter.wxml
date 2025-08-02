@@ -15,8 +15,9 @@
     <view class="edit-profile-btn" bindtap="navigateToProfileEdit">
       <text>编辑资料</text>
       <image src="/images/arrow-right.png"></image>
-                                                                                                                                                                                                                                                                                                                                                                                                                                              </view>
+    </view>
   </view>
+</view>
 
   <!-- 订单管理区域 -->
   <view class="order-management-container">
@@ -24,6 +25,7 @@
       <text>我的订单</text>
       <text class="view-all" bindtap="navigateToAllOrders">查看全部</text>
     </view>
+  </view>
     
     <!-- 订单状态导航 -->
     <view class="order-status-tabs">
@@ -36,4 +38,5 @@
         <text>待支付</text>
       </view>
       <view class="status-tab {{currentTab === 2 ? 'active' : ''}}" bindtap="switchTab" data-index="2">
-        
+      </view> 
+    </view>
