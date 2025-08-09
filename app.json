@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/userCenter/userCenter",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/userCenter/userCenter",
+    "pages/payment/payment",
     "pages/orderDetail/orderDetail",
     "pages/refundApply/refundApply",
-    "pages/payment/payment",
     "pages/paymentResult/paymentResult"
   ],
   "window": {
