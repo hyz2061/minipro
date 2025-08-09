@@ -1,86 +1,159 @@
-.container {
+/* 用户中心整体样式 */
+.user-center {
+  background-color: #f5f5f5;
   min-height: 100vh;
-  background-color: #ffffff;
-  padding-bottom: 20rpx;
 }
 
-/* 用户信息区域 */
-/* 父容器：头像 + 文字 横向排版 */
-.user-info-container {
-  display: flex;        /* 横向布局 */
-  align-items: center;  /* 垂直居中 */
-  padding: 90rpx 34rpx; 
-  background-color: rgb(231, 231, 231);
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
-}
-
-/* 头像样式（保持原有） */
-.user-avatar {
-  width: 120rpx;
-  height: 120rpx;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-right: 24rpx; /* 与文字保持间距 */
-}
-.avatar image {
-  width: 100%;
-  height: 100%;
-}
-
-/* 文字内容容器：让内部内容也横向排版 */
-.user-text-wrap {
-  display: flex;
-  flex-direction: column; /* 先纵向，方便 nickname + 编辑按钮 再横向 */
-  flex: 1; /* 占满剩余空间 */
-}
-
-/* 昵称 + 编辑按钮 这一行：横向排版 */
-.name-row {
-  display: flex;
-  align-items: center;  /* 垂直居中 */
-  justify-content: space-between; /* 昵称靠左，编辑按钮靠右 */
-  margin-bottom: 10rpx;  /* 与会员状态保持间距 */
-}
-
-/* 昵称样式（保持原有） */
-.user-name {
-  font-size: 32rpx;
-  font-weight: 600;
-  color: #333;
-  position: relative;
-  left: -15rpx;
-}
-
-/* 编辑资料按钮：横向排版（文字 + 箭头） */
-.edit-profile-btn {
-  display: flex;
-  align-items: center; 
-  color: rgb(131, 109, 109);
-  font-size: 28rpx;
-}
-.edit-button{
-  border-radius: 20rpx;
-}
-.edit-profile-btn image {
-  width: 24rpx;
-  height: 40rpx;
-  margin-left: 8rpx; /* 与文字保持间距 */
-}
-
-
-/* 会员状态样式（保持原有，可微调） */
-.user-status {
+/* 头部信息样式 */
+.user-header {
+  background-color: #fff;
+  padding: 50rpx;
   display: flex;
   align-items: center;
-  font-size: 24rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.user-avatar image {
+  width: 180rpx;
+  height: 120rpx;
+  border-radius: 80%;
+  margin-right: 80rpx;
+}
+
+.user-name {
+  font-size: 34rpx;
+  margin-bottom: 15rpx;
+}
+
+.user-actions button {
+  background-color: #bda8a8;
+  color: white;
+  font-size: 28rpx;
+  padding: 10rpx 25rpx;
+  border-radius: 10rpx;
+}
+
+/* 订单状态标签容器 */
+.order-status-tabs {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}
+
+/* 单个标签样式 */
+.status-tab {
+  flex: 1;
+  text-align: center;
+  height: 90rpx;
+  line-height: 80rpx;
+}
+
+/* 标签内按钮样式 */
+.status-tab button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 32rpx;
+  color: #333;
+  height: 100%;
+  width: 100%;
+}
+
+/* 选中标签样式 */
+.status-tab.active button {
+  color: #ff4d4f;
+  border-bottom: 2px solid #ff4d4f;
+  padding-bottom: 4rpx;
+  font-weight: bold;
+}
+
+/* 按钮点击反馈 */
+.status-btn:active {
+  opacity: 0.8;
+  background-color: #f5222d; 
+  box-shadow: 
+    0 1rpx 4rpx rgba(255,77,79,0.4),
+    inset 0 1rpx 2rpx rgba(0,0,0,0.1); 
+  transform: translateY(1rpx); 
+}
+
+/* 订单列表样式 */
+.order-list {
+  padding: 20rpx;
+}
+
+/* 订单项样式 */
+.order-item {
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+/* 订单信息行 */
+.order-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15rpx;
+}
+
+/* 订单号样式 */
+.order-number {
+  font-size: 28rpx;
   color: #666;
 }
-.status-badge {
-  margin-left: 12rpx;
-  padding: 2rpx 16rpx;
-  background-color: #4cd964;
-  color: #fff;
-  border-radius: 20rpx;
-  font-size: 20rpx;
+
+/* 订单状态样式 */
+.order-status {
+  font-size: 28rpx;
+}
+
+/* 待支付状态样式 */
+.status-unpaid {
+  color: #ff4d4f;
+}
+
+/* 普通状态样式 */
+.status-normal {
+  color: #52c41a;
+}
+
+/* 订单金额和时间样式 */
+.order-amount, .order-time {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+/* 支付按钮样式 */
+.pay-btn {
+  margin-top: 10rpx;
+  background-color: #a18585;
+  color: white;
+  font-size: 26rpx;
+  padding: 8rpx 20rpx;
+  border-radius: 10rpx;
+}
+
+/* 加载提示样式 */
+.loading-tip {
+  text-align: center;
+  padding: 40rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+/* 空状态提示样式 */
+.empty-tip {
+  text-align: center;
+  padding: 80rpx 20rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+.order-manage{
+  text-align: center;
+  font-size: larger;
 }
